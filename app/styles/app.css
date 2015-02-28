@@ -1,0 +1,70 @@
+.container {
+  width:100%;
+  z-index: 1;
+}
+
+.left-pull{
+  background-color: #550000;
+  opacity: 0.3;
+  position:fixed;
+  width: 20px;
+  height: 100%;
+  left: -1px;
+  z-index: 2;
+}
+
+.left-pull:hover{
+  opacity: 1;
+  width: 275px;
+}
+
+.header {
+  z-index: 3;
+  left: -1px;
+}
+
+img.branding.logo {
+  height: 80px;
+  padding-left: 10px;
+  z-index:10;
+}
+
+.branding.logo.name{
+  color:#BB6622;
+  font-size: 24px;
+  vertical-align: -webkit-baseline-middle;
+  z-index: 10;
+}
+
+.camera-nav {
+  padding-top: 18px;
+  vertical-align: -webkit-baseline-middle;
+
+}
+.camera-nav > li > a {
+  color:#BB6622;
+  font-size: 24px;
+}
+
+.camera-nav > li > a:hover {
+  color:#BB6622;
+  font-size: 24px;
+  background-color: #550000;
+}
+
+.footer{
+  position:fixed;
+  bottom:0px;
+  background-color: #BB6622;
+  width:100%;
+  opacity: 0.5;
+  left:-1px;
+}
+
+.footer-text{
+  padding-left: 25px;
+  vertical-align: -webkit-baseline-middle;
+  color:#710909;
+  font-weight: 400;
+}
+
