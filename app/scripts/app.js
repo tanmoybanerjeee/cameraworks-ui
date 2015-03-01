@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('cameraworksUiApp', [
+  .module('cameraworks', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

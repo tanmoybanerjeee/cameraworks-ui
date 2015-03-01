@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the cameraworksUiApp
  */
-angular.module('cameraworksUiApp')
+angular.module('cameraworks')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

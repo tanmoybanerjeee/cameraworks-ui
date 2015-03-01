@@ -1,15 +1,16 @@
 .container {
   width:100%;
   z-index: 1;
+  padding: 0px;
 }
 
 .left-pull{
-  background-color: #550000;
-  opacity: 0.3;
+  background-color: #636266;
   position:fixed;
-  width: 20px;
-  height: 100%;
-  left: -1px;
+  width: 60px;
+  top:60px;
+  height:100%;
+  left: 0px;
   z-index: 2;
 }
 
@@ -21,50 +22,61 @@
 .header {
   z-index: 3;
   left: -1px;
+  width: 100%;
+  background-color: #a7a7a7;
+  padding: 0px;
+  height: 60px;
 }
 
 img.branding.logo {
-  height: 80px;
-  padding-left: 10px;
+  height: 60px;
+  padding-left: 0px;
   z-index:10;
+  position:relative;
 }
 
 .branding.logo.name{
-  color:#BB6622;
-  font-size: 24px;
-  vertical-align: -webkit-baseline-middle;
+  color:#222222;
+  font-size: 20px;
   z-index: 10;
+  position:relative;
+  vertical-align: -webkit-baseline-middle;
 }
 
 .camera-nav {
-  padding-top: 18px;
-  vertical-align: -webkit-baseline-middle;
-
+  padding-top: 10px;
+  padding-right:10px;
 }
 .camera-nav > li > a {
-  color:#BB6622;
-  font-size: 24px;
+  color:#222222;
+  font-size: 20px;
+  vertical-align: -webkit-baseline-middle;
 }
 
 .camera-nav > li > a:hover {
-  color:#BB6622;
-  font-size: 24px;
-  background-color: #550000;
+  color:#dddddd;
+  font-size: 20px;
+  background-color: #222222;
 }
 
 .footer{
   position:fixed;
   bottom:0px;
-  background-color: #BB6622;
+  height:60px;
   width:100%;
-  opacity: 0.5;
-  left:-1px;
+  left:60px;
+  background-color: #a7a7a7;
 }
 
 .footer-text{
-  padding-left: 25px;
+  padding-left: 5px;
+  padding-top: 10px;
   vertical-align: -webkit-baseline-middle;
-  color:#710909;
+  color: #440505;
+  display: block;
+  width:130px;
+  word-wrap: break-word;
+  font-family: cursive;
   font-weight: 400;
 }
 

@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="styles/app.css">
   <!-- endbuild -->
 </head>
-<body ng-app="cameraworksUiApp">
+<body ng-app="cameraworks">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -23,13 +23,13 @@
 
 <!-- Add your site or application content here -->
 <div class="container">
-  <div class = "left-pull">
+  <div class = "left-pull" cw-leftpull>
   </div>
   <div class="header">
     <ul class="camera-nav nav nav-pills pull-right">
       <li><a ng-href="#/">Home</a></li>
       <li><a ng-href="#/about">About</a></li>
-      <li><a ng-href="#">Contact</a></li>
+      <li><a ng-href="#">Login</a></li>
     </ul>
     <img class = "branding logo"src="images/icon.png" alt="Cameraworks">
     <span class="branding logo name">Cameraworks</span>
@@ -86,6 +86,7 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>
+<script src="scripts/left-pull/left-pull-directive.js"></script>
 <!-- endbuild -->
 </body>
 </html>
