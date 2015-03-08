@@ -6,6 +6,8 @@
 angular.module('cameraworks').directive('cwLeftpull', function () {
   return {
     restrict: 'A',
+    transclude:true,
+    priority:10,
     templateUrl: function(element){
       element.bind('mouseenter', function(){
         return 'views/left-pull/hover.html';

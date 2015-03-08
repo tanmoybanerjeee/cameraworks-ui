@@ -16,7 +16,7 @@
 
 .left-pull:hover{
   opacity: 1;
-  width: 275px;
+  width: 200px;
 }
 
 .header {
@@ -29,10 +29,12 @@
 }
 
 img.branding.logo {
-  height: 60px;
+  height: auto;
+  width: 60px;
   padding-left: 0px;
-  z-index:10;
-  position:relative;
+  padding-top: 10px;
+  z-index: 10;
+  position: relative;
 }
 
 .branding.logo.name{
@@ -40,11 +42,12 @@ img.branding.logo {
   font-size: 20px;
   z-index: 10;
   position:relative;
+  display: inline-block;
   vertical-align: -webkit-baseline-middle;
 }
 
 .camera-nav {
-  padding-top: 10px;
+  padding-top: 5px;
   padding-right:10px;
 }
 .camera-nav > li > a {
@@ -80,3 +83,36 @@ img.branding.logo {
   font-weight: 400;
 }
 
+div.left-pull nav ul{
+  padding:0px;
+}
+
+div.left-pull nav ul li {
+  list-style: none;
+  font-size: 24px;
+  padding-left: 17px;
+  padding-top:8px;
+  color: #dddddd;
+}
+
+div.left-pull nav ul li label {
+display: none;
+}
+
+div.left-pull nav ul li:hover {
+  color:#ffffff;
+  background-color:#4cae4c;
+}
+
+div.left-pull:hover nav ul li label {
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: top;
+}
+
+div.left-pull:hover nav ul li:hover label {
+  display: inline-block;
+  color:#ffffff;
+  font-size: 20px;
+  vertical-align: top;
+}
