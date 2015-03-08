@@ -1,3 +1,14 @@
+/*
+dark-grey: #636266
+light-grey: #a7a7a7
+very-dark-grey:#222222
+medium-dark-grey: #dddddd
+
+bright-green: #4cae4c
+dark-green:
+
+*/
+
 .container {
   width:100%;
   z-index: 1;
@@ -51,15 +62,15 @@ img.branding.logo {
   padding-right:10px;
 }
 .camera-nav > li > a {
-  color:#222222;
+  color:#dddddd;
   font-size: 20px;
   vertical-align: -webkit-baseline-middle;
 }
 
-.camera-nav > li > a:hover {
-  color:#dddddd;
+.camera-nav > li > a:hover, .camera-nav > li > a:focus {
+  color:#ffffff;
   font-size: 20px;
-  background-color: #222222;
+  background-color: #a7a7a7;
 }
 
 .footer{
@@ -99,7 +110,7 @@ div.left-pull nav ul li label {
 display: none;
 }
 
-div.left-pull nav ul li:hover {
+div.left-pull nav ul li:hover, div.left-pull nav ul li:focus {
   color:#ffffff;
   background-color:#4cae4c;
 }
@@ -110,9 +121,44 @@ div.left-pull:hover nav ul li label {
   vertical-align: top;
 }
 
-div.left-pull:hover nav ul li:hover label {
+div.left-pull:hover nav ul li:hover label,div.left-pull:hover nav ul li:focus label {
   display: inline-block;
   color:#ffffff;
   font-size: 20px;
   vertical-align: top;
+}
+
+.btn-primary{
+  background-color: #4cae4c;
+  border-color: #387038;
+  min-width: 150px;
+  font-size: 20px;
+}
+
+.btn-primary:hover,.btn-primary:focus{
+  background-color: #448444;
+  border-color: #387038;
+  min-width: 150px;
+  font-size: 20px;
+}
+
+.btn-warning{
+  background-color: #e38d13;
+  border-color: #d08311;
+  min-width: 150px;
+  font-size: 20px;
+}
+
+.btn-warning:hover,.btn-warning:focus{
+  background-color: #d08311;
+  border-color: #d08311;
+  min-width: 150px;
+  font-size: 20px;
+}
+
+.modal-header, .modal-content, .modal-footer{
+  border:0px;
+  background-color: #eeeeee;
+  z-index: 100;
+  border-radius: 2px;
 }
