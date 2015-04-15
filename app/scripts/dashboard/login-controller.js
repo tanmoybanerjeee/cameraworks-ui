@@ -7,7 +7,6 @@ angular.module('cameraworks').controller('loginController', ['$rootScope','$scop
 
 $rootScope.authentication = '';
 
-
   $scope.open = function (size) {
 
     var modalInstance = $modal.open({

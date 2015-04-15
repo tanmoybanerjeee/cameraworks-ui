@@ -101,7 +101,7 @@ div.left-pull nav ul{
 div.left-pull nav ul li {
   list-style: none;
   font-size: 24px;
-  padding-left: 17px;
+  padding-left: 14px;
   padding-top:8px;
   color: #dddddd;
 }
@@ -117,17 +117,29 @@ div.left-pull nav ul li:hover, div.left-pull nav ul li:focus {
 
 div.left-pull:hover nav ul li label {
   display: inline-block;
-  font-size: 20px;
-  vertical-align: top;
+  font-size: 18px;
+  vertical-align: middle;
 }
 
 div.left-pull:hover nav ul li:hover label,div.left-pull:hover nav ul li:focus label {
   display: inline-block;
   color:#ffffff;
-  font-size: 20px;
-  vertical-align: top;
+  font-size: 18px;
+  vertical-align: middle;
+
 }
 
+.fa-correction{
+  margin-left: 23px;
+}
+
+.icon-500px{
+  background-image: url('/images/500px.svg');
+  width: 27px;
+  background-size: contain;
+  display: inline-block;
+
+}
 .btn-primary{
   background-color: #4cae4c;
   border-color: #387038;
@@ -154,6 +166,10 @@ div.left-pull:hover nav ul li:hover label,div.left-pull:hover nav ul li:focus la
   border-color: #d08311;
   min-width: 150px;
   font-size: 20px;
+}
+
+.modal-dialog{
+  top:60px;
 }
 
 .modal-header, .modal-content, .modal-footer{
