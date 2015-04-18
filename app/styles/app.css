@@ -101,6 +101,7 @@ div.left-pull nav ul{
 div.left-pull nav ul li {
   list-style: none;
   font-size: 24px;
+  height: 45px;
   padding-left: 14px;
   padding-top:8px;
   color: #dddddd;
@@ -133,13 +134,29 @@ div.left-pull:hover nav ul li:hover label,div.left-pull:hover nav ul li:focus la
   margin-left: 23px;
 }
 
-.icon-500px{
+.icon-500px, .icon-500px:hover {
   background-image: url('/images/500px.svg');
-  width: 27px;
+  width: 21px;
+  height: 21px;
   background-size: contain;
   display: inline-block;
+  box-sizing: border-box;
+  line-height: 24px;
 
 }
+
+.icon-500px-text{
+  vertical-align: middle;
+  padding-left: 27px;
+  color: rgb(221, 221, 221);
+  display: inline-block;
+  font-size: 18px;
+  height: 18px;
+  line-height: 18px;
+  margin-left: 23px;
+
+}
+
 .btn-primary{
   background-color: #4cae4c;
   border-color: #387038;
