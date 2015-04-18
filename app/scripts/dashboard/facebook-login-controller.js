@@ -6,7 +6,7 @@
 angular.module('cameraworks').controller('facebookLoginController',
   ['$rootScope', '$scope', 'Facebook', function($rootScope, $scope, Facebook){
 
-    $rootScope.authentication = ''
+    $rootScope.authentication = '';
 
     // Defining user logged status
     $scope.logged = false;
@@ -24,15 +24,16 @@ angular.module('cameraworks').controller('facebookLoginController',
         return Facebook.isReady();
       },
       function(newVal) {
-        if (newVal)
+        if (newVal) {
           $scope.facebookReady = true;
+        }
       }
     );
 
     var userIsConnected = false;
 
     Facebook.getLoginStatus(function(response) {
-      if (response.status == 'connected') {
+      if (response.status === 'connected') {
         userIsConnected = true;
       }
     });
@@ -51,7 +52,7 @@ angular.module('cameraworks').controller('facebookLoginController',
      */
     $scope.login = function() {
       Facebook.login(function(response) {
-        if (response.status == 'connected') {
+        if (response.status === 'connected') {
           $scope.logged = true;
           $scope.me();
         }
@@ -84,14 +85,14 @@ angular.module('cameraworks').controller('facebookLoginController',
           $scope.logged = false;
         });
       });
-    }
+    };
 
     /**
      * Taking approach of Events :D
      */
     $scope.$on('Facebook:statusChange', function(ev, data) {
       console.log('Status: ', data);
-      if (data.status == 'connected') {
+      if (data.status === 'connected') {
         $scope.$apply(function() {
           $scope.salutation = true;
           $scope.byebye     = false;

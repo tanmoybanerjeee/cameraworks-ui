@@ -24,7 +24,7 @@ $rootScope.authentication = '';
       $rootScope.authentication = data.email;
       $log.info('Authenticated by : '+ $rootScope.authentication + ' at :'+ new Date());
     }, function () {
-      $log.info('Dismissed at :' + new Date())
+      $log.info('Dismissed at :' + new Date());
     });
   };
 }

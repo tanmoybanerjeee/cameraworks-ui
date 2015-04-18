@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="cameraworks">
 <head>
   <meta charset="utf-8">
-  <title>CameraWorks</title>
+  <title cw-update-title>CameraWorks</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles/app.css">
   <!-- endbuild -->
 </head>
-<body ng-app="cameraworks">
+<body >
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -36,7 +36,10 @@
     <span class="branding logo name">Cameraworks</span>
   </div>
 
-  <div ng-view=""></div>
+  <div ui-view="">
+
+
+  </div>
 
   <div class="footer">
     <span class = "footer-text">Because everyone likes to look back...</span>
@@ -83,6 +86,8 @@
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
 <script src="bower_components/dependency/dependency.js"></script>
+<script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -93,6 +98,8 @@
 <script src="scripts/left-pull/left-pull-directive.js"></script>
 <script src="scripts/dashboard/login-controller.js"></script>
 <script src="scripts/dashboard/modal-controller.js"></script>
+<script src="scripts/dashboard/directives/update-title-directive.js"></script>
+
 <!-- endbuild -->
 </body>
 </html>
