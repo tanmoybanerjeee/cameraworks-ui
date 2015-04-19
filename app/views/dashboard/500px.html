@@ -1,4 +1,11 @@
-<section id = 'dashboard'>
-  <h2>500px</h2>
+<section id = 'dashboard' ng-controller='PxController'>
+  <h2 ng-bind='pxCtrl.viewHeaderTitle'></h2>
+  <div id = 'social-data' >
+    <img ng-repeat="photo in pxCtrl.photos"
+          src = '{{photo.image_url}}' alt = '{{photo.name}}' />
+  </div>
+  <div id = 'social-footer'>
+
+  </div>
 </section>
 

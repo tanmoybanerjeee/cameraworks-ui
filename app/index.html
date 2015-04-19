@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title cw-update-title>CameraWorks</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Cameraworks - with camera, and beyond.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
@@ -23,22 +23,20 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="container">
+<div class="container-fluid cw-container">
   <div class = "left-pull" cw-leftpull>
   </div>
-  <div class="header" ng-controller="loginController">
+  <div class="header row" ng-controller="loginController">
     <ul class="camera-nav nav nav-pills pull-right">
       <li><a ng-href="#/">Home</a></li>
       <li><a ng-href="#/about">About</a></li>
       <li><a ng-click="open('modal-lg')">Login</a></li>
     </ul>
     <img class = "branding logo"src="images/icon.png" alt="Cameraworks">
-    <span class="branding logo name">Cameraworks</span>
+    <span class="branding logo name hidden-xs">Cameraworks</span>
   </div>
 
-  <div ui-view="">
-
-
+  <div ui-view="" class = "container-fluid cw-content" ng-init="">
   </div>
 
   <div class="footer">
@@ -93,13 +91,22 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
+<script src="scripts/config.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>
 <script src="scripts/left-pull/left-pull-directive.js"></script>
 <script src="scripts/dashboard/login-controller.js"></script>
 <script src="scripts/dashboard/modal-controller.js"></script>
 <script src="scripts/dashboard/directives/update-title-directive.js"></script>
-
+<script src="scripts/dashboard/500px/config.js"></script>
+<script src="scripts/dashboard/500px/controllers/500px-controller.js"></script>
+<script src="scripts/dashboard/500px/services/500px-service.js"></script>
+<script src="vendor/scripts/500px.js"></script>
+<script>
+  _500px.init({
+    sdk_key: 'ed268a6e602da11e7ab3dcfee64aedcecce33ade'
+  });
+</script>
 <!-- endbuild -->
 </body>
 </html>

@@ -9,10 +9,9 @@ dark-green:
 
 */
 
-.container {
-  width:100%;
-  z-index: 1;
-  padding: 0px;
+.cw-container{
+  z-index: 99;
+  padding-left: 5px;
 }
 
 .left-pull{
@@ -22,7 +21,7 @@ dark-green:
   top:60px;
   height:100%;
   left: 0px;
-  z-index: 2;
+  z-index: 99;
 }
 
 .left-pull:hover{
@@ -31,19 +30,21 @@ dark-green:
 }
 
 .header {
-  z-index: 3;
+  z-index: 99;
   left: -1px;
-  width: 100%;
+  top: 0px;
+  right: 0px;
   background-color: #a7a7a7;
   padding: 0px;
   height: 60px;
+  position: fixed;
 }
 
 img.branding.logo {
   height: auto;
   width: 60px;
-  padding-left: 0px;
-  padding-top: 10px;
+  margin-left: 15px;
+  margin-top: 8px;
   z-index: 10;
   position: relative;
 }
@@ -72,6 +73,10 @@ img.branding.logo {
   color:#ffffff;
   font-size: 20px;
   background-color: #a7a7a7;
+}
+
+.cw-content{
+  padding-bottom: 50px;
 }
 
 .footer{
@@ -103,8 +108,8 @@ div.left-pull nav ul li {
   list-style: none;
   font-size: 24px;
   height: 45px;
-  padding-left: 14px;
-  padding-top:8px;
+  padding-left: 17px;
+  padding-top:9px;
   color: #dddddd;
 }
 
@@ -132,6 +137,10 @@ div.left-pull:hover nav ul li label {
   vertical-align: middle;
 }
 
+div.left-pull nav ul li span{
+  vertical-align: text-top;
+}
+
 div.left-pull:hover nav ul li:hover label,
 div.left-pull:hover nav ul li:focus label,
 div.left-pull:hover nav ul li:active label{
@@ -140,7 +149,6 @@ div.left-pull:hover nav ul li:active label{
   font-size: 18px;
   vertical-align: middle;
   cursor: pointer;
-
 }
 
 .fa-correction{
@@ -163,7 +171,7 @@ span.fa.icon-500px:hover, span.icon-500px:active, span.icon-500px:focus,{
 }
 
 .icon-500px-text{
-  vertical-align: middle;
+  vertical-align: text-top;
   padding-left: 27px;
   color: rgb(221, 221, 221);
   display: inline-block;

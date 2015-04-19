@@ -20,10 +20,10 @@ angular
     'ui.router',
     'facebook'
   ]).
-  config(function (FacebookProvider) {
+  config(function (FacebookProvider, APP_CONSTANTS) {
     // You can set appId with setApp method
     // FacebookProvider.setAppId('myAppId');
-    var myAppId = '189101997907498';
+    var myAppId = APP_CONSTANTS.FACEBOOK_APP_ID;
 
     /**
      * After setting appId you need to initialize the module.
@@ -31,7 +31,8 @@ angular
      */
     FacebookProvider.init(myAppId);
 
-  }).config(function ($stateProvider) {
+  })
+  .config(function ($stateProvider) {
     $stateProvider.state('home', {
       url: '/home',
       templateUrl: 'views/dashboard/home.html',
@@ -40,13 +41,7 @@ angular
       url: '/gallery',
       templateUrl: 'views/dashboard/gallery.html',
       data: {pageTitle: 'Gallery - Cameraworks'}
-    })
-      .state('500px', {
-        url: '/500px',
-        templateUrl: 'views/dashboard/500px.html',
-        data: {pageTitle: '500px - Cameraworks'}
-      })
-      .state('flickr', {
+    }).state('flickr', {
         url: '/flickr',
         templateUrl: 'views/dashboard/flickr.html',
         data: {pageTitle: 'Flickr - Cameraworks'}

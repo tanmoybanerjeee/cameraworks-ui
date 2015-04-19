@@ -1,7 +1,32 @@
-section#dashboard h2 {
-  left: 80px;
-  top: 0px;
-  font-size: 24px;
-  position: relative;
-  padding: 5px;
+
+
+@media screen and (min-width:768px ){
+  section#dashboard h2 {
+    left: 90px;
+    top: 60px;
+    font-size: 24px;
+    position: fixed;
+    padding: 5px;
+  }
+
+  div#social-data{
+    position: fixed;
+    top: 120px;
+    left: 90px;
+    bottom: 80px;
+    overflow: scroll;
+  }
+
+  div#social-data img {
+    position: relative;
+    margin: 5px;
+
+  }
+
+  div#social-footer {
+    height: 50px;
+    width:100%;
+    min-height: 50px;
+  }
+
 }
