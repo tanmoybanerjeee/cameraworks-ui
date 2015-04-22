@@ -9,5 +9,8 @@ angular.module('cameraworks').config(function($stateProvider) {
     controller:'PxController',
     controllerAs:'pxCtrl',
     data: {pageTitle: 'Home - 500px'}
-  });
+  }).state('callback', {
+    url:'/500px/callback',
+    templateUrl:'views/dashboard/500px-callback.html'
+  })
 });

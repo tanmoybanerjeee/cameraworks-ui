@@ -2,15 +2,37 @@
  * Created by tanmoybanerjee on 4/19/15.
  */
 'use strict';
-angular.module('cameraworks').controller('PxController', ['PxService',function(PxService){
+angular.module('cameraworks').controller('PxController', ['PxService', function (PxService) {
 
   var self = this;
-  this.viewHeaderTitle = '500px';
+  self.viewHeaderTitle = '';
+  self.connectOption = '';
   self.photos = [];
-    PxService.getPxConnection().then(function(photos){
-      angular.forEach(photos, function(photo){
-        console.log(photo.name);
-        self.photos.push(photo);
-      })
-    });
+
+  self.authData = {};
+
+  self.viewHeaderTitle = '500px - Popular Images ';
+  self.connectOption = 'Import your 500px images';
+
+  PxService.getPxPopularImages().then(function (photos) {
+      self.photos = photos;
+  });
+
+  self.linkPxPhotos = function(){
+
+     PxService.linkPxPhotos(function(userPhotos){
+       self.photos = userPhotos.photos;
+       self.viewHeaderTitle=userPhotos.viewHeaderTitle;
+     });
+
+  };
+
+
+  self.showPhoto = function (id) {
+    PxService.getPhoto(id).then(function (photo) {
+      self.photo = photo;
+      console.log(photo.image_url);
+    })
+  };
+
 }]);

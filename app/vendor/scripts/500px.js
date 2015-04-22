@@ -259,18 +259,18 @@
           container.removeChild(iframe_element);
         }, 0);
 
-        if (parameters.not_logged_in) {
+        if (parameters["/500px/callback#not_logged_in"]) {
           oauth_token = null;
           if (callback && typeof callback == 'function') {
             callback('not_logged_in');
           }
-        } else if (parameters.not_authorized) {
+        } else if (parameters["/500px/callback#not_authorized"]) {
           oauth_token = null;
           if (callback && typeof callback == 'function') {
             callback('not_authorized');
           }
-        } else if (parameters.token) {
-          oauth_token = parameters.token;
+        } else if (parameters["/500px/callback#token"]) {
+          oauth_token = parameters["/500px/callback#token"];
           fire_event('authorization_obtained');
           if (callback && typeof callback == 'function') {
             callback('authorized');
@@ -341,13 +341,14 @@
         setTimeout(function () {
           container.removeChild(iframe_element);
         }, 0);
-        if (parameters.no_token_specified) {
+
+        if (parameters["/500px/callback#no_token_specified"]) {
           status = 'no_token_specified';
-        } else if (parameters.invalid_token) {
+        } else if (parameters["/500px/callback#invalid_token"]) {
           status = 'invalid_token';
-        } else if (parameters.not_logged_in) {
+        } else if (parameters["/500px/callback#not_logged_in"]) {
           status = 'not_logged_in';
-        } else if (parameters.logged_out) {
+        } else if (parameters["/500px/callback#logged_out"]) {
           status = 'logged_out';
         }
         if (callback && typeof callback == 'function') {
@@ -391,7 +392,7 @@
               string_parts.push(encode_param_name(property, root) + '%5B%5D=' + encoded_value);
             }
           } else if (typeof value == 'object') {
-            string_parts.push(this.object_to_params(value, encode_param_name(property, root)));
+            string_parts.push(object_to_params(value, encode_param_name(property, root)));
           } else {
             string_parts.push(encode_param_name(property, root) + '=' + encodeURIComponent(value));
           }
@@ -410,11 +411,11 @@
     };
 
     login_callback = function (callback, parameters) {
-      if (parameters.denied && callback && typeof callback == 'function') {
+      if (parameters["/500px/callback#denied"] && callback && typeof callback == 'function') {
         fire_event('authorization_cancelled');
         callback.call(self, 'denied');
-      } else if (parameters.token) {
-        oauth_token = parameters.token;
+      } else if (parameters["/500px/callback#token"]) {
+        oauth_token = parameters["/500px/callback#token"];
         fire_event('authorization_obtained');
         if (callback && typeof callback == 'function') {
           callback.call(self, 'authorized');

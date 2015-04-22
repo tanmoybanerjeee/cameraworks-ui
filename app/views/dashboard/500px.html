@@ -1,8 +1,11 @@
 <section id = 'dashboard' ng-controller='PxController'>
   <h2 ng-bind='pxCtrl.viewHeaderTitle'></h2>
+  <a class="connectOption" href="" ng-bind='pxCtrl.connectOption' ng-click = 'pxCtrl.linkPxPhotos()'></a>
+  <a href="" ng-bind='pxCtrl.authData'></a>
   <div id = 'social-data' >
-    <img ng-repeat="photo in pxCtrl.photos"
-          src = '{{photo.image_url}}' alt = '{{photo.name}}' />
+   <a href="#" ng-repeat="photo in pxCtrl.photos" ng-click="pxCtrl.showPhoto(photo.id)">
+     <img src = '{{photo.image_url}}' alt = '{{photo.name}}' />
+   </a>
   </div>
   <div id = 'social-footer'>
 
