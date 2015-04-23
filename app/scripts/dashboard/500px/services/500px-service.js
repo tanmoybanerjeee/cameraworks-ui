@@ -7,9 +7,20 @@ angular.module('cameraworks').service('PxService', ['$http', '$q', function($htt
   var self = this;
 
   return {
-    getPxPopularImages:getPxPopularImages,
+    getPxAuthorization:getPxAuthorization,
     getPhoto:getPhoto,
     linkPxPhotos:linkPxPhotos
+  }
+
+  function getPxAuthorization(callback){
+    _500px.getAuthorizationStatus(function(status){
+      if (status === 'authorized') {
+        linkPxPhotos(callback);
+      }else{
+        getPxPopularImages(callback);
+      }
+    });
+
   }
 
   function linkPxPhotos(callback){
@@ -27,14 +38,13 @@ angular.module('cameraworks').service('PxService', ['$http', '$q', function($htt
   }
 
   function getUserPhotos(callback){
-
     var userPhotos = {
       photos:[],
       viewHeaderTitle:''
     };
      _500px.api('/users', function(response){
       var me = response.data.user;
-      _500px.api('/photos', {feature:'user', user_id:me.id}, function(response){
+      _500px.api('/photos', {feature:'user', user_id:me.id, image_size:3}, function(response){
         userPhotos.photos = response.data.photos;
         userPhotos.viewHeaderTitle='500px - Photos of '+ me.firstname;
         callback.call(self,userPhotos);
@@ -42,12 +52,16 @@ angular.module('cameraworks').service('PxService', ['$http', '$q', function($htt
     });
   }
 
-  function getPxPopularImages() {
-    var photos = $q.defer();
-    _500px.api('/photos', { feature: 'popular', page: 1, image_size:2 }, function (response) {
-     photos.resolve(response.data.photos);
+  function getPxPopularImages(callback) {
+    var popularPhotos = {
+      photos:[],
+      viewHeaderTitle:''
+    };
+    _500px.api('/photos', { feature: 'popular', page: 1, image_size:3 }, function (response) {
+      popularPhotos.photos=response.data.photos;
+      popularPhotos.viewHeaderTitle = '500px - Popular photos';
+      callback.call(self,popularPhotos);
     });
-    return photos.promise;
   }
 
   function getPhoto(id) {
@@ -58,6 +72,5 @@ angular.module('cameraworks').service('PxService', ['$http', '$q', function($htt
     });
     return photo.promise;
   }
-
 
 }])

@@ -1,9 +1,16 @@
 <section id = 'dashboard' ng-controller='PxController'>
-  <h2 ng-bind='pxCtrl.viewHeaderTitle'></h2>
-  <a class="connectOption" href="" ng-bind='pxCtrl.connectOption' ng-click = 'pxCtrl.linkPxPhotos()'></a>
+  <h2 ng-bind='pxCtrl.photoModel.viewHeaderTitle'></h2>
+  <h3>The Basic Stuff</h3>
+  <div class="btn-group-vertical" role="group" aria-label="500px flow">
+    <button class="btn btn-default btn-lg" href="" ng-bind='pxCtrl.connectOption.import' ng-click = 'pxCtrl.linkPxPhotos()'></button>
+    <button class="btn btn-default btn-lg" href="" ng-bind='pxCtrl.connectOption.select' ng-click = ''></button>
+    <button class="btn btn-default btn-lg" href="" ng-bind='pxCtrl.connectOption.publish' ng-click = ''></button>
+
+  </div>
+
   <a href="" ng-bind='pxCtrl.authData'></a>
   <div id = 'social-data' >
-   <a href="#" ng-repeat="photo in pxCtrl.photos" ng-click="pxCtrl.showPhoto(photo.id)">
+   <a href="#" ng-repeat="photo in pxCtrl.photoModel.photos" ng-click="pxCtrl.showPhoto(photo.id)">
      <img src = '{{photo.image_url}}' alt = '{{photo.name}}' />
    </a>
   </div>

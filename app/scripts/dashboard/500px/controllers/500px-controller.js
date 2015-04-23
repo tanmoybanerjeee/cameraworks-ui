@@ -2,31 +2,34 @@
  * Created by tanmoybanerjee on 4/19/15.
  */
 'use strict';
-angular.module('cameraworks').controller('PxController', ['PxService', function (PxService) {
+angular.module('cameraworks').controller('PxController', ['PxService', '$state', function (PxService, $state) {
 
   var self = this;
-  self.viewHeaderTitle = '';
-  self.connectOption = '';
-  self.photos = [];
+  self.connectOption = {
+    import:'',
+    select:'',
+    publish:''
+  };
+  self.photoModel = {
+    photos:[],
+    viewHeaderTitle:''
+  }
 
-  self.authData = {};
+  self.connectOption.import = 'Import your 500px images';
+  self.connectOption.select='Select your best photos';
+  self.connectOption.publish='Publish to Gallery';
 
-  self.viewHeaderTitle = '500px - Popular Images ';
-  self.connectOption = 'Import your 500px images';
-
-  PxService.getPxPopularImages().then(function (photos) {
-      self.photos = photos;
+  PxService.getPxAuthorization(function(data){
+    self.photoModel=data;
   });
 
   self.linkPxPhotos = function(){
-
      PxService.linkPxPhotos(function(userPhotos){
-       self.photos = userPhotos.photos;
-       self.viewHeaderTitle=userPhotos.viewHeaderTitle;
+       self.photoModel= userPhotos;
+       $state.go('500px');
      });
 
   };
-
 
   self.showPhoto = function (id) {
     PxService.getPhoto(id).then(function (photo) {
