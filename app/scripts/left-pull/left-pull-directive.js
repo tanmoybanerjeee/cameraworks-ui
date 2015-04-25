@@ -9,13 +9,7 @@ angular.module('cameraworks').directive('cwLeftpull', function () {
     transclude:true,
     priority:10,
     templateUrl: function(element){
-      element.bind('mouseenter', function(){
-        return 'views/left-pull/hover.html';
-      });
-      element.bind('mouseleave', function(){
-        return 'views/left-pull/default.html';
-      });
-      return 'views/left-pull/default.html';
+      return 'views/left-pull/left-pull.html';
     }
   };
 });

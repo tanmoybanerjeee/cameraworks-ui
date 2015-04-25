@@ -21,6 +21,7 @@ angular.module('cameraworks').controller('PxController', ['PxService', '$state',
 
   PxService.getPxAuthorization(function(data){
     self.photoModel=data;
+    $state.go('500px');
   });
 
   self.linkPxPhotos = function(){

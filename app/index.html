@@ -90,10 +90,14 @@
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="vendor/scripts/500px.js"></script>
+<script>
+  _500px.init({
+    sdk_key: 'ed268a6e602da11e7ab3dcfee64aedcecce33ade'
+  });
+</script>
 <script src="scripts/app.js"></script>
 <script src="scripts/config.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/about.js"></script>
 <script src="scripts/left-pull/left-pull-directive.js"></script>
 <script src="scripts/dashboard/login-controller.js"></script>
 <script src="scripts/dashboard/modal-controller.js"></script>
@@ -101,12 +105,11 @@
 <script src="scripts/dashboard/500px/config.js"></script>
 <script src="scripts/dashboard/500px/controllers/500px-controller.js"></script>
 <script src="scripts/dashboard/500px/services/500px-service.js"></script>
-<script src="vendor/scripts/500px.js"></script>
-<script>
-  _500px.init({
-    sdk_key: 'ed268a6e602da11e7ab3dcfee64aedcecce33ade'
-  });
-</script>
+<script src="scripts/dashboard/facebook/config.js"></script>
+<script src="scripts/dashboard/facebook/controllers/facebook-controller.js"></script>
+<script src="scripts/dashboard/facebook/services/facebook-service.js"></script>
+
+
 <!-- endbuild -->
 </body>
 </html>

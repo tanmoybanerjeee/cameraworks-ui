@@ -1,4 +1,22 @@
-<section id = 'dashboard'>
-  <h2>Facebook</h2>
+<section id = 'dashboard' ng-controller='FacebookController'>
+  <h2 ng-bind='fbCtrl.photoModel.viewHeaderTitle'></h2>
+  <h3>The Basic Stuff</h3>
+  <div class="btn-group-vertical" role="group" aria-label="500px flow">
+
+    <button class="btn btn-default btn-lg" href="" ng-bind='fbCtrl.connectOption.import' ng-click = 'fbCtrl.fbLogin()'></button>
+    <button class="btn btn-default btn-lg" href="" ng-bind='fbCtrl.connectOption.select' ng-click = ''></button>
+    <button class="btn btn-default btn-lg" href="" ng-bind='fbCtrl.connectOption.publish' ng-click = ''></button>
+
+  </div>
+
+  <div id = 'social-data' >
+    <a href="#" ng-repeat="album in fbCtrl.albums" ng-click="fbCtrl.showPhoto(photo.id)">
+      <!--label ng-bind="album.name"></label-->
+      <img src = '{{album.cover.source}}' alt = '{{album.name}}' />
+    </a>
+  </div>
+  <div id = 'social-footer'>
+
+  </div>
 </section>
 
